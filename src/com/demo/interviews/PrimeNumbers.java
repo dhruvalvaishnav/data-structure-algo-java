@@ -2,6 +2,7 @@ package com.demo.interviews;
 
 import java.util.*;
 import java.util.function.IntPredicate;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class PrimeNumbers {
@@ -12,11 +13,13 @@ public class PrimeNumbers {
         List<Integer> primeNumbers = new ArrayList<>();
         for (int number = 1; number <= 50; number++) {
             int count = 0;
+            //get the number and check if for the modulo if it is 0 then count++
             for (int i = 1; i <= number; i++) {
                 if (number % i == 0) {
                     count++;
                 }
             }
+            //whenever count is 2 prime the number - which is prime
             if (count == 2) {
                 primeNumbers.add(number);
 //                System.out.println("Num : " + number + " is prime number");
@@ -38,6 +41,7 @@ public class PrimeNumbers {
     }
 
     private static void usingJava8() {
+        System.out.println("using java 8 :");
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 23, 99, 4, 56, 21, 35, 47, 78, 65, 33, 1, 62, 40, 100);
         numbers.stream().filter(PrimeNumbers::isPrime).forEach(System.out::println);
 

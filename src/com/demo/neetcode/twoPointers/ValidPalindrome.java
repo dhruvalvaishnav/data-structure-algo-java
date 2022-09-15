@@ -11,11 +11,11 @@ public class ValidPalindrome {
         System.out.println(isPalindrome(phrase));
     }
 
-    public static boolean isPalindrome(String s) {
+    public static boolean isPalindrome(String input) {
         StringBuilder reverse = new StringBuilder();
-        for (int i = 0; i < s.toLowerCase().toCharArray().length; i++) {
-            if (Character.isLetterOrDigit(s.charAt(i))) {
-                reverse.append(s.charAt(i));
+        for (int i = 0; i < input.toLowerCase().toCharArray().length; i++) {
+            if (Character.isLetterOrDigit(input.charAt(i))) {
+                reverse.append(input.charAt(i));
             }
         }
         reverse = new StringBuilder(reverse.toString().toLowerCase());

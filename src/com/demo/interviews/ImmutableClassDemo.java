@@ -47,6 +47,7 @@ public class ImmutableClassDemo {
         List<String> myHobbies = Arrays.asList("Cricket", "Hockey");
         // to make list immutable
         Collections.unmodifiableList(myHobbies);
+//        myHobbies.add("Music"); will throw an exception - java.lang.UnsupportedOperationException
 
         ImmutableClassDemo p = new ImmutableClassDemo("testFirstname", "testLastname", new Date(), myHobbies);
         ImmutableClassDemo p1 = new ImmutableClassDemo("t", "testLastname", new Date(), myHobbies);

@@ -20,7 +20,7 @@ public class CyclicallyRotateArray {
     }
 
     /*Function to left rotate arr[] of siz n by d To handle if d >= n */
-    private static void leftRotate(int arr[], int d, int n) {
+    private static void leftRotate(int[] arr, int d, int n) {
         d = d % n;
         int i, j, k, temp;
         int g_c_d = gcd(d, n);

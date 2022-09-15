@@ -14,11 +14,11 @@ public class EqualsAndDoubleEqual {
         System.out.println(s1 == a);
         // true coz same obj value
         System.out.println(s2.equals(a));
-        // false coz not at same memory location
+        // false coz different memory location
         System.out.println(s2 == a);
         // true coz same obj value
         System.out.println(s1.equals(s2));
-        // false coz not at same memory location
+        // false coz different memory location
         System.out.println(s1 == s2);
 
     }

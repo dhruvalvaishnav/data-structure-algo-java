@@ -5,7 +5,7 @@ public class StaticNonStaticMethod {
 //        you can not call non-static method from static method
 //        method1("Dhruval");
         /*
-        if you want to call then by creating object you can call non-static method
+        if you want to call than by creating object you can call non-static method
         StaticNonStaticMethod s = new StaticNonStaticMethod();
         s.method1("Dhruval");
         */
@@ -14,7 +14,7 @@ public class StaticNonStaticMethod {
 
     public void method1(String name) {
         System.out.println(name);
-        // you can call static method from non static method
+        // you can call static method from non-static method
         method2("Dhruval");
     }
 

@@ -1,6 +1,6 @@
 package com.demo.interviews;
 
-public class Test {
+public class TestForSingleTon {
 
     public static void main(String[] args) {
         SingleTon.getInstance();
@@ -25,7 +25,7 @@ class SingleTon {
                     instance = new SingleTon();
                     System.out.println("SingleTon obj created");
                 } else {
-                    throw new RuntimeException("cant not create the object");
+                    throw new RuntimeException("can not create the object");
                 }
             }
         }

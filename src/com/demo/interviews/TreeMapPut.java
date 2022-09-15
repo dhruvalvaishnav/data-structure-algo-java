@@ -5,7 +5,7 @@ import java.util.*;
 public class TreeMapPut {
     public static void main(String[] args) {
 
-        Map map = new TreeMap();
+        Map<String, String> map = new TreeMap<>();
         map.put("test key 1", "test value 1");
         map.put("test key 2", "test value 2");
         map.put("test key 3", "test value 3");

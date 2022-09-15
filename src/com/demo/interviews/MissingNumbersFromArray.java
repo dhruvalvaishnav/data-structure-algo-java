@@ -33,7 +33,7 @@ public class MissingNumbersFromArray {
     }
 
     // Function to find the missing elements
-    static void printMissingElements(int arr[],
+    static void printMissingElements(int[] arr,
                                      int N) {
 
         // Initialize an array with zero
@@ -41,7 +41,7 @@ public class MissingNumbersFromArray {
         // element in the array
         int[] b = new int[arr[N - 1] + 1];
 
-        // Make b[i]=1 if i is present
+        // Make b[i]=1 if 'i' is present
         // in the array
         for (int i = 0; i < N; i++) {
 

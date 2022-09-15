@@ -1,7 +1,5 @@
 package com.demo.interviews;
 
-import java.util.Objects;
-
 public class BinaryGap {
     public static void main(String[] args) {
 
@@ -16,6 +14,7 @@ public class BinaryGap {
     }
 
     private static int getBinaryGap(String str) {
+        // PENDING CODE
 
         int result = 0;
         //check for the null or 0 length string

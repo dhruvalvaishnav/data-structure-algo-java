@@ -5,12 +5,10 @@ public class ArrayDivisibleByK {
     public static void main(String[] args) {
 
         int[] arr = {2, 2, 1, 7, 5, 3};
-        System.out.println(Solution.countKdivPairs(arr, arr.length, 4));
+        System.out.println(countKdivPairs(arr, arr.length, 4));
     }
-}
 
-class Solution {
-    public static long countKdivPairs(int arr[], int n, int k) {
+    public static long countKdivPairs(int[] arr, int n, int k) {
         long count = 0L;
         int[] frequency = new int[k];
         for (int i = 0; i < n; i++) {

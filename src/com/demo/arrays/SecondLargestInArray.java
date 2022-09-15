@@ -19,9 +19,25 @@ public class SecondLargestInArray {
 
         int[] a = {1, 2, 5, 6, 3, 2};
         int[] b = {44, 66, 99, 77, 33, 22, 55};
-        System.out.println("Second Largest: " + getSecondLargest(a, 6));
-        System.out.println("Second Largest: " + getSecondLargest(b, 7));
+        System.out.println("Second Largest: " + getSecondLargest(a, a.length));
+        System.out.println("Second Largest: " + getSecondLargest(b, b.length));
+        System.out.println();
+        System.out.println("Second Largest: " + getSecondLargestAnother(a));
+        System.out.println("Second Largest: " + getSecondLargestAnother(b));
 
+    }
+
+    private static int getSecondLargestAnother(int[] arr) {
+        int highest = Integer.MIN_VALUE, secHighest = Integer.MIN_VALUE;
+        for (int j : arr) {
+            if (j > highest) {
+                secHighest = highest;
+                highest = j;
+            } else if (j > secHighest) {
+                secHighest = j;
+            }
+        }
+        return secHighest;
     }
 }
 

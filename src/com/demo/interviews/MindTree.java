@@ -30,8 +30,9 @@ public class MindTree {
             integerStringMap.put(i, "ADDED");
         }
 
+        System.out.println("Output array : ");
         for (int i : integerStringMap.keySet()) {
-            System.out.print("Output array : " + i);
+            System.out.println(i);
         }
     }
 }
