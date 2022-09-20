@@ -36,6 +36,7 @@ public class ReverseLinkedList {
     // T - O(n) && S - O(1) - two pointers - iterative
     public static ListNode reverseList(ListNode head) {
         System.out.println("Given List is : " + head.toString());
+
         // make two pointers = prev = null and curr = head
         ListNode prev = null, curr = head;
         // loop while curr != null
