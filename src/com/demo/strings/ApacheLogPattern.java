@@ -1,7 +1,6 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 // Given an Apache log file, return IP address(es) which accesses the site most often.
 // our log is in this format (Common Log Format). One entry per line.

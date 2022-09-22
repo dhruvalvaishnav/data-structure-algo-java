@@ -1,10 +1,7 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /*  https://leetcode.com/problems/longest-palindrome/
 

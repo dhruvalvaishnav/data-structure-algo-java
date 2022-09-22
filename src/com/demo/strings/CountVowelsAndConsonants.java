@@ -1,6 +1,4 @@
-package com.demo.Strings;
-
-import java.util.HashSet;
+package com.demo.strings;
 
 public class CountVowelsAndConsonants {
     public static void main(String[] args) {
