@@ -34,19 +34,21 @@ public class BestTimeToBuySellStock {
     public static void main(String[] args) {
 
         int[] prices = {7, 1, 5, 3, 6, 4};
-//        int[] prices = {7, 6, 4, 3, 1,100};
+        int[] prices2 = {7, 6, 4, 3, 1, 100};
 
+        System.out.println("MAX PROFIT IS: " + calculateMaxProfitForOneStock(new int[]{}));
         System.out.println("MAX PROFIT IS: " + calculateMaxProfitForOneStock(prices));
+        System.out.println("MAX PROFIT IS: " + calculateMaxProfitForOneStock(prices2));
     }
 
     private static int calculateMaxProfitForOneStock(int[] prices) {
-        //left - buy and right - sell
-        int left = 0, right = 1;
-        int maxProfit = 0;
+        // left - buy and right - sell, maxProfit
+        int left = 0, right = 1, maxProfit = 0;
 
         while (right < prices.length) {
-            //profitable ??
+            // profitable ??
             if (prices[left] < prices[right]) {
+                // calculate profit
                 final int profit = prices[right] - prices[left];
                 maxProfit = Math.max(maxProfit, profit);
             } else {
