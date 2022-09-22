@@ -31,6 +31,7 @@ public class LongestPalindrome {
 
     public static void main(String[] args) {
         System.out.println(longestPalindrome("a"));
+        System.out.println(longestPalindrome("Aa"));
         System.out.println(longestPalindrome("abccccdd"));
     }
 
@@ -51,7 +52,7 @@ public class LongestPalindrome {
         for (int val : map.values()) {
             // even chars
             if (val % 2 == 0) result += val;
-            else { //odd chars
+            else { // odd chars
                 odd_found = true;
                 result += val - 1;
             }
