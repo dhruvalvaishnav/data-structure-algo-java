@@ -1,4 +1,4 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 // Given two words returns the shortest distance between their two midpoints in number of characters,
 // words can appear multiple times in any order and should be case in-sensitive.

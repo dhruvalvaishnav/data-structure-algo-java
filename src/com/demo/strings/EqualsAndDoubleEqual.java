@@ -1,4 +1,4 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 public class EqualsAndDoubleEqual {
 

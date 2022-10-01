@@ -1,6 +1,4 @@
-package com.demo.Strings;
-
-import java.util.Arrays;
+package com.demo.strings;
 
 public class ReverseString {
     public static void main(String[] args) {

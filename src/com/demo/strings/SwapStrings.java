@@ -1,4 +1,4 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 // Swap two Strings Without Using any Third Variable
 public class SwapStrings {

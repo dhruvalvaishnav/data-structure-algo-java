@@ -1,7 +1,6 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 import java.util.*;
-import java.util.stream.Collectors;
 // Given a list of words,group them by anagrams
 // Input:List of"cat","dog","god"
 // Output:A Set of Sets of anagrams:{{‘cat'}, {‘dog', ‘god'}}

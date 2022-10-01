@@ -1,4 +1,4 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 // The sentence "The quick brown fox jumps over the lazy dog" contains every single letter in the alphabet. Such sentences are called pangrams.
 // write a function findMissingLetters, which takes a String sentence,
@@ -8,8 +8,6 @@ package com.demo.Strings;
 // Test Cases:
 // Input: The slow purple oryx meanders past the quiescent canine
 // Output: bfgjkvz
-
-import java.util.Arrays;
 
 public class Pangram {
 

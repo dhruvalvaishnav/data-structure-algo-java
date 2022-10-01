@@ -1,4 +1,4 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 public class SwapCharsInStringWithoutChange {
     // Java program to demonstrate character swap using toCharArray().
