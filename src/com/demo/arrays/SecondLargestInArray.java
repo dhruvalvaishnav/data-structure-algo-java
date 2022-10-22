@@ -1,7 +1,7 @@
 package com.demo.arrays;
 
 public class SecondLargestInArray {
-    public static int getSecondLargest(int[] a, int total) {
+    public static int getSecondLargestBruteForce(int[] a, int total) {
         int temp;
         for (int i = 0; i < total; i++) {
             for (int j = i + 1; j < total; j++) {
@@ -19,15 +19,15 @@ public class SecondLargestInArray {
 
         int[] a = {1, 2, 5, 6, 3, 2};
         int[] b = {44, 66, 99, 77, 33, 22, 55};
-        System.out.println("Second Largest: " + getSecondLargest(a, a.length));
-        System.out.println("Second Largest: " + getSecondLargest(b, b.length));
+        System.out.println("Second Largest: " + getSecondLargestBruteForce(a, a.length));
+        System.out.println("Second Largest: " + getSecondLargestBruteForce(b, b.length));
         System.out.println();
-        System.out.println("Second Largest: " + getSecondLargestAnother(a));
-        System.out.println("Second Largest: " + getSecondLargestAnother(b));
+        System.out.println("Second Largest: " + getSecondLargestBinarySearch(a));
+        System.out.println("Second Largest: " + getSecondLargestBinarySearch(b));
 
     }
 
-    private static int getSecondLargestAnother(int[] arr) {
+    private static int getSecondLargestBinarySearch(int[] arr) {
         int highest = Integer.MIN_VALUE, secHighest = Integer.MIN_VALUE;
         for (int j : arr) {
             if (j > highest) {

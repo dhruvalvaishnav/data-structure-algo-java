@@ -2,6 +2,7 @@ package com.demo.numberic;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class SecondLargest {
 
@@ -11,6 +12,12 @@ public class SecondLargest {
 //        int[] arr = {6575,57575,985989,980,34,3};
         //8 - second highest number
         findSecondLargest(arr);
+
+        List<Integer> numbers = Arrays.asList(12, 12, 85, 99, 41, 33, 63, 41, 22, 33, 1079, 31);
+
+        int[] nums = numbers.stream().mapToInt(number -> number).toArray();
+
+        System.out.println(find2ndLargestWithDuplicates(nums));
 
         /*
         // Q.1 remove duplicates from two arrays + merge two arrays
@@ -62,5 +69,22 @@ public class SecondLargest {
             }
         }
         System.out.println("Second Largest in given array : " + Arrays.toString(arr) + " is = " + secondLargest);
+    }
+
+    private static int find2ndLargestWithDuplicates(int[] nums) {
+        System.out.print("Given array = " + Arrays.toString(nums));
+        int max = Integer.MIN_VALUE, secondMax = Integer.MIN_VALUE;
+        int temp;
+        for (int num : nums) {
+            if (num > max) {
+                temp = max;
+                max = num;
+                secondMax = temp;
+            } else if (num > secondMax && num != max) {
+                secondMax = num;
+            }
+        }
+        System.out.print(" and second Largest = ");
+        return secondMax;
     }
 }
