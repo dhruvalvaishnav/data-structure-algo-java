@@ -1,4 +1,4 @@
-package com.demo.strings;
+package com.demo.Strings;
 
 import java.util.*;
 // Given a list of words,group them by anagrams
