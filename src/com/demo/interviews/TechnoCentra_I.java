@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 
-public class TechnoCentra {
+public class TechnoCentra_I {
 
     public static void main(String[] args) {
         List<String> names = Arrays.asList("Karthik", "Ruhi", "Karan", "Pooja");

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class TechnoCentraa {
+public class TechnoCentra_II {
     public static void main(String[] args) {
 
         List<Integer> num1 = Arrays.asList(new Integer[]{2, 3, 7, 9, 8, 6, 5, 4});
