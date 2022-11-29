@@ -1,4 +1,4 @@
-package com.demo.interviews;
+package com.demo.map;
 
 import java.util.Collections;
 import java.util.HashMap;

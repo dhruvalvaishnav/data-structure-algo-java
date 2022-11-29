@@ -52,7 +52,7 @@ public class Bhavna {
     }
 }
 
-//1. find second highest element from array in single iteration
+//1. find second-highest element from array in single iteration
 
 //2. build map from list - Map<String, List<Employee>
 

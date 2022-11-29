@@ -1,4 +1,4 @@
-package com.demo.interviews;
+package com.demo.numberic;
 
 public class NumberPalindrome {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.demo.interviews;
+package com.demo.arrays;
 
 import java.util.*;
 

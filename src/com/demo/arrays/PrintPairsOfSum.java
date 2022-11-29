@@ -1,4 +1,4 @@
-package com.demo.interviews;
+package com.demo.arrays;
 
 public class PrintPairsOfSum {
 

@@ -6,32 +6,32 @@ import java.util.HashMap;
 
 public class Iris {
     public static void main(String[] args) throws CloneNotSupportedException {
-        System.out.println(SingleTonDemo1.getInstance());
-        System.out.println(SingleTonDemo1.getInstance());
-        System.out.println(SingleTonDemo1.getInstance());
-        System.out.println(SingleTonDemo1.getInstance());
-        System.out.println(SingleTonDemo1.getInstance());
-        System.out.println(SingleTonDemo1.getInstance());
-        System.out.println(SingleTonDemo1.getInstance());
+        System.out.println(SingleTonIris.getInstance());
+        System.out.println(SingleTonIris.getInstance());
+        System.out.println(SingleTonIris.getInstance());
+        System.out.println(SingleTonIris.getInstance());
+        System.out.println(SingleTonIris.getInstance());
+        System.out.println(SingleTonIris.getInstance());
+        System.out.println(SingleTonIris.getInstance());
 
-        SingleTonDemo1 instance = SingleTonDemo1.getInstance();
-        Object clone = (SingleTonDemo1) instance.clone();
+        SingleTonIris instance = SingleTonIris.getInstance();
+        Object clone = (SingleTonIris) instance.clone();
 
         System.out.println(clone == instance);
     }
 }
 
-class SingleTonDemo1 implements Cloneable, Serializable {
+class SingleTonIris implements Cloneable, Serializable {
 
-    private static volatile SingleTonDemo1 obj;
+    private static volatile SingleTonIris obj;
 
-    private SingleTonDemo1() {}
+    private SingleTonIris() {}
 
-    public static SingleTonDemo1 getInstance() {
+    public static SingleTonIris getInstance() {
         if (obj == null) {
-            synchronized (SingleTonDemo1.class) {
+            synchronized (SingleTonIris.class) {
                 if (obj == null) {
-                    obj = new SingleTonDemo1();
+                    obj = new SingleTonIris();
                 }
             }
         }
@@ -39,9 +39,9 @@ class SingleTonDemo1 implements Cloneable, Serializable {
     }
 
     @Override
-    protected SingleTonDemo1 clone() throws CloneNotSupportedException {
+    protected SingleTonIris clone() throws CloneNotSupportedException {
         super.clone();
-        return SingleTonDemo1.getInstance();
+        return SingleTonIris.getInstance();
     }
 }
 

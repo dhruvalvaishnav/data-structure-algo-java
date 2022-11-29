@@ -1,4 +1,4 @@
-package com.demo.interviews;
+package com.demo.Strings;
 
 public class BinaryGap {
     public static void main(String[] args) {

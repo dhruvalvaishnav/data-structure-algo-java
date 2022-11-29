@@ -1,4 +1,4 @@
-package com.demo.interviews;
+package com.demo.numberic;
 
 import java.util.*;
 import java.util.function.IntPredicate;
