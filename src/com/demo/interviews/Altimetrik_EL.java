@@ -74,3 +74,11 @@ class SingletonAAA implements Serializable {
 // SELECT * FROM student
 //      WHERE marks < (SELECT MAX(marks) FROM student
 //                      WHERE marks < SELECT MAX(marks) FROM student);
+
+//====================
+// Other
+// stuList -> name age section
+// avg age of stud section wise
+// op : map<String,Long> - section - avg age
+// list.stream().collect(Collectors.groupingBy(x->x.getSection(), Collectors.averagingInt(Student::age)));
+

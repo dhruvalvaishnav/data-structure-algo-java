@@ -1,4 +1,4 @@
-package com.demo.strings;
+package com.demo.Strings;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +30,7 @@ public class LongestPalindrome {
         System.out.println(longestPalindrome("a"));
         System.out.println(longestPalindrome("Aa"));
         System.out.println(longestPalindrome("abccccdd"));
+
     }
 
     public static int longestPalindrome(String s) {
