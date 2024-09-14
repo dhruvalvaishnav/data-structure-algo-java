@@ -43,6 +43,8 @@ public class TechnoCentra_II {
         return out;
     }
 
+    //https://www.geeksforgeeks.org/minimize-length-of-a-string-by-removing-suffixes-and-prefixes-of-same-characters/
+
     private static String minimizedString(List<String> list, String str) {
         for (String s : list) {
 
