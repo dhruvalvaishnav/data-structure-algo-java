@@ -32,6 +32,10 @@ public class Areteminds_2 {
 //        int res = Arrays.binarySearch(arr, target);
 //        boolean test = res > 0 ? true : false;
 
+//        3.a. Arrays.sort(arr);
+//             return binarySearch(arr, target); - this is a local method
+//        This version first sorts the array (which is 𝑂(𝑛 log⁡ 𝑛) O(nlogn)) and then performs binary search (𝑂(log⁡ 𝑛) O(logn)).
+
 //        4. Using the Linear Search method
 //        boolean test = false;
 //        for (int i : arr) {
@@ -60,20 +64,42 @@ public class Areteminds_2 {
         }
 
         int i = 0;
+        // Fill the array with 0s
         while (count0 > 0) {
             arr[i++] = 0;
             count0--;
         }
+        // Fill the array with 1s
         while (count1 > 0) {
             arr[i++] = 1;
             count1--;
         }
+        // Fill the array with 2s
         while (count2 > 0) {
             arr[i++] = 2;
             count2--;
         }
         return arr;
     }
+
+
+    private static boolean binarySearch(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) {
+                return true;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return false;
+    }
+
 }
 
 

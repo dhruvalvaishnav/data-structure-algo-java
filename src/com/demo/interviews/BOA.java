@@ -36,37 +36,71 @@ public class BOA {
      * if not get another string
      */
 
+//    private static void getAnagramGroups(List<String> list) {
+//        Map<String, List<String>> anagrams = new HashMap<>();
+//
+//        //check the list is not null or empty
+//        if (list == null || list.size() == 0) return;
+//
+//        //get the word from the list
+//        for (String word : list) {
+//            //convert it into the char array
+//            char[] chars = word.trim().toLowerCase().toCharArray();
+//            //sort it and save it to the new temp string
+//            Arrays.sort(chars);
+//            String sortedWord = String.valueOf(chars);
+//
+//            //check for the temp string(which is sorted) - key is present in map or not
+//            if (anagrams.containsKey(sortedWord)) {
+//                //if yes then make the new list and add their type of the strings in this list
+//                List<String> newList = anagrams.get(sortedWord);
+//                newList.add(word);
+//                anagrams.put(sortedWord, newList);
+//            } else {
+//                //if not then make another list and add the string into it
+//                List<String> newList2 = new ArrayList<>();
+//                newList2.add(word);
+//                anagrams.put(sortedWord, newList2);
+//            }
+//        }
+//
+//        for (Map.Entry<String, List<String>> o : anagrams.entrySet()) {
+//            System.out.println(o.getValue());
+//        }
+//    }
+
+
     private static void getAnagramGroups(List<String> list) {
-        Map<String, List<String>> anagrams = new HashMap<>();
+        Map<String, List<String>> anagramsMap = new HashMap<>();
 
         //check the list is not null or empty
-        if (list == null || list.size() == 0) return;
+        if (list == null || list.isEmpty()) {
+            System.out.println("Provided list is empty or null");
+            return;
+        }
 
-        //get the word from the list
         for (String word : list) {
-            //convert it into the char array
-            char[] chars = word.trim().toLowerCase().toCharArray();
-            //sort it and save it to the new temp string
-            Arrays.sort(chars);
-            String sortedWord = String.valueOf(chars);
+            // sort the word to create a key
+            String sortedWord = sortWord(word);
 
-            //check for the temp string(which is sorted) - key is present in map or not
-            if (anagrams.containsKey(sortedWord)) {
-                //if yes then make the new list and add their type of the strings in this list
-                List<String> newList = anagrams.get(sortedWord);
-                newList.add(word);
-                anagrams.put(sortedWord, newList);
-            } else {
-                //if not then make another list and add the string into it
-                List<String> newList2 = new ArrayList<>();
-                newList2.add(word);
-                anagrams.put(sortedWord, newList2);
-            }
+            // Get the list of anagrams for this sorted key
+            List<String> stringList = anagramsMap.getOrDefault(sortedWord, new ArrayList<>());
+            // Add the original string to the list
+            stringList.add(word);
+            // Put the list back in the map
+            anagramsMap.put(sortedWord, stringList);
         }
+        //System.out.println("anagramsMap: " + anagramsMap);
 
-        for (Map.Entry<String, List<String>> o : anagrams.entrySet()) {
-            System.out.println(o.getValue());
+        for (Map.Entry<String, List<String>> entry : anagramsMap.entrySet()) {
+            System.out.println(entry.getValue());
         }
+    }
+
+    private static String sortWord(String word) {
+        char[] chars = word.trim().toLowerCase().toCharArray();
+        Arrays.sort(chars);
+        return String.valueOf(chars);
     }
 }
 
