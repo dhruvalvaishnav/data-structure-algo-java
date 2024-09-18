@@ -21,23 +21,18 @@ public class CitirusTech {
         System.out.println("All employees contacts = " + employeeContacts);
 
         HashMap<Object, String> employeeMap = new HashMap<>();
-
         employeeMap.put(new EmployeeDummyForCTS("Yash"), "IT");
         employeeMap.put(new EmployeeDummyForCTS("Pranay"), "Marketing");
         employeeMap.put(new EmployeeDummyForCTS("Vipul"), "HR");
         employeeMap.put(new EmployeeDummyForCTS("Yash"), "Sales");
-
-        System.out.println("Size of map : " + employeeMap.size());
+        System.out.println("Size of map : " + employeeMap.size()); //3
 
         HashSet<EmployeeDummyForCTS> employeeSet = new HashSet<>();
-
         employeeSet.add(new EmployeeDummyForCTS("Yash"));
         employeeSet.add(new EmployeeDummyForCTS("Pranay"));
         employeeSet.add(new EmployeeDummyForCTS("Vipul"));
         employeeSet.add(new EmployeeDummyForCTS("Yash"));
-
-        System.out.println("Size of set : " + employeeSet.size());
-
+        System.out.println("Size of set : " + employeeSet.size()); // 3
 
     }
 }
@@ -94,7 +89,11 @@ class EmployeeDummyForCTS {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EmployeeDummyForCTS employeeDummyForCTS = (EmployeeDummyForCTS) o;
-        return Double.compare(employeeDummyForCTS.salary, salary) == 0 && Objects.equals(name, employeeDummyForCTS.name) && Objects.equals(department, employeeDummyForCTS.department) && Objects.equals(city, employeeDummyForCTS.city) && Objects.equals(contactList, employeeDummyForCTS.contactList);
+        return Double.compare(employeeDummyForCTS.salary, salary) == 0 &&
+                Objects.equals(name, employeeDummyForCTS.name) &&
+                Objects.equals(department, employeeDummyForCTS.department) &&
+                Objects.equals(city, employeeDummyForCTS.city) &&
+                Objects.equals(contactList, employeeDummyForCTS.contactList);
     }
 
     @Override
