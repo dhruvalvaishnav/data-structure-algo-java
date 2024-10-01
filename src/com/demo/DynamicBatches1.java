@@ -1,9 +1,7 @@
 package com.demo;
 
 import java.util.*;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * @author Dhruval Vaishnav Created on 27-08-2024
