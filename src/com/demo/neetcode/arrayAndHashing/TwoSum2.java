@@ -2,47 +2,14 @@ package com.demo.neetcode.arrayAndHashing;
 
 import java.util.*;
 
-/*
+/* Q.1 :
     Given an array of integers numbers and an integer target,return indices of the two numbers such that they add up to target.
     You may assume that each input would have exactly one solution,and you may not use the same element twice.
     You can return the answer in any order.
     Example 1:
     Input:numbers=[2,7,11,15],target=9
     Output:[0,1]
-*/
 
-public class TwoSum2 {
-
-    public static void main(String[] args) {
-        int[] values = {3, 2, 4};
-        System.out.println("Output is at index : " + Arrays.toString(twoSum(values, 6)));
-
-//        ListNode l1 = new ListNode();
-//        l1.push(2);
-//        l1.push(4);
-//        l1.push(3);
-//
-//        ListNode l2 = new ListNode();
-//        l2.push(5);
-//        l2.push(6);
-//        l2.push(4);
-
-    }
-
-    // brute force
-    public static int[] twoSum(int[] numbers, int target) {
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = i + 1; j < numbers.length; j++) {
-                if (numbers[j] == target - numbers[i]) {
-                    return new int[]{i, j};
-                }
-            }
-        }
-        // In case there is no solution, we'll just return null
-        return null;
-    }
-
-    /*
     Q.2 : addTwoNumbers with LinkedList :
     You are given two non-empty linked lists representing two non-negative integers.
     The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
@@ -72,40 +39,93 @@ public class TwoSum2 {
     Return dummy head's next node.
     */
 
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+public class TwoSum2 {
+
+    public static void main(String[] args) {
+        int[] values = {3, 2, 4};
+        System.out.println("Output is at index : " + Arrays.toString(twoSum(values, 6)));
+
+        ListNode l1 = new ListNode();
+        l1.push(2);
+        l1.push(4);
+        l1.push(3);
+
+        ListNode l2 = new ListNode();
+        l2.push(5);
+        l2.push(6);
+        l2.push(4);
+
+        ListNode listNode = addTwoNumbers(l1, l2);
+        System.out.println("Output is : " + listNode);
+
+    }
+
+    // brute force
+    public static int[] twoSum(int[] numbers, int target) {
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[j] == target - numbers[i]) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        // In case there is no solution, we'll just return null
+        return null;
+    }
+
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummyHead = new ListNode(0);
-        ListNode p = l1, q = l2, curr = dummyHead;
+        ListNode p = l1, q = l2, current = dummyHead;
         int carry = 0;
         while (p != null || q != null) {
-            int x = (p != null) ? p.val : 0;
-            int y = (q != null) ? q.val : 0;
+            int x = (p != null) ? p.value : 0;
+            int y = (q != null) ? q.value : 0;
+
             int sum = carry + x + y;
             carry = sum / 10;
-            curr.next = new ListNode(sum % 10);
-            curr = curr.next;
+            current.next = new ListNode(sum % 10);
+            current = current.next;
+
             if (p != null) p = p.next;
             if (q != null) q = q.next;
         }
         if (carry > 0) {
-            curr.next = new ListNode(carry);
+            current.next = new ListNode(carry);
         }
-        return dummyHead.next;
+        return dummyHead.next; // Return the next node of the dummy head
     }
 
-    public static class ListNode extends LinkedList {
-        int val;
+    static class ListNode {
+        int value;
         ListNode next;
 
         ListNode() {
         }
 
-        ListNode(int val) {
-            this.val = val;
+        ListNode(int x) {
+            value = x;
         }
 
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
+        void push(int x) {
+            if (next == null) {
+                next = new ListNode(x);
+            } else {
+                next.push(x);
+            }
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder result = new StringBuilder();
+            ListNode current = this;
+            while (current != null) {
+                result.append(current.value);
+                if (current.next != null) {
+                    result.append("->"); // Formatting for the output
+                }
+                current = current.next;
+            }
+            return result.toString();
         }
     }
 }
