@@ -9,17 +9,19 @@ package com.demo.strings;
 // Input: The slow purple oryx meanders past the quiescent canine
 // Output: bfgjkvz
 
+import java.util.Arrays;
+
 public class Pangram {
 
     public static void main(String[] args) {
         String input = "The slow purple oryx meanders past the quiescent canine";
 //        Output: bfgjkvz
-        System.out.println(findMissingLetters(input));
+        System.out.println(findMissingLettersToBecomePangram(input));
 
         // check if the given string is panagram or not :
         String str = "The quick brown fox jumps over the lazy dog";
 
-        System.out.println(findMissingLetters(str));
+      //  System.out.println(findMissingLettersToBecomePangram(str));
 
         if (isPanagram(str)) {
             System.out.println("The given string is panagram!");
@@ -39,7 +41,7 @@ public class Pangram {
         return true;
     }
 
-    private static String findMissingLetters(String sentence) {
+    private static String findMissingLettersToBecomePangram(String sentence) {
         System.out.print("Missing letters for panagram in given string : '" + sentence + "' => ");
 
         final int MAX_CHARS = 26;
@@ -51,7 +53,7 @@ public class Pangram {
             if (c != ' ') alphabeticChars[c - 'a']++;
         }
 
-//        System.out.println(Arrays.toString(alphabeticChars));
+       //System.out.println("alphabeticChars : " + Arrays.toString(alphabeticChars));
 
         String output = "";
         for (int i = 0; i < MAX_CHARS; i++) {

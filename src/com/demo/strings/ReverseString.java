@@ -1,4 +1,4 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 public class ReverseString {
     public static void main(String[] args) {

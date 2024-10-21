@@ -25,6 +25,7 @@ public class LongestUniformSubstring {
         System.out.println(Arrays.toString(longestUniformSubstring("10000111")));
         System.out.println(Arrays.toString(longestUniformSubstring("")));
         System.out.println(Arrays.toString(longestUniformSubstring("a")));
+        System.out.println(Arrays.toString(longestUniformSubstring("DDDDDDDDDDDhruvalll")));
     }
 
     private static int[] longestUniformSubstring(String input) {
@@ -39,6 +40,8 @@ public class LongestUniformSubstring {
         int idx = -1, count = 1, maxCount = 0, i;
 
         // loop starts from i = 1 to < length()
+        // why i = 1? because we are comparing with previous char at i - 1 and
+        // why i < input.length() because we are comparing with i + 1
         for (i = 1; i < input.length(); i++) {
             if (input.charAt(i) == input.charAt(i - 1)) {
                 count++;
@@ -55,5 +58,7 @@ public class LongestUniformSubstring {
             idx = i - maxCount;
         }
         return new int[]{idx, maxCount};
+        // what is the time complexity of this solution? O(n)
+        // what is the space complexity of this solution? O(1)
     }
 }
