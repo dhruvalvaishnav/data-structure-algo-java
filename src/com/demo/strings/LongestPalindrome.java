@@ -1,4 +1,4 @@
-package com.demo.Strings;
+package com.demo.strings;
 
 import java.util.HashMap;
 import java.util.Map;
