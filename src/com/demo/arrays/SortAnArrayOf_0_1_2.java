@@ -12,6 +12,20 @@ public class SortAnArrayOf_0_1_2 {
 
 //        System.out.println("Sorted Array : "  + Arrays.toString(sortAnArrayUsingCountingApproach(arr)));
         System.out.println("Sorted Array : " + Arrays.toString(sortAnArrayUsingBucketApproach(arr)));
+        System.out.println("Sorted Array : " + Arrays.toString(testArr(arr)));
+    }
+
+    private static int[] testArr(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    arr[i] = arr[i] + arr[j];
+                    arr[j] = arr[i] - arr[j];
+                    arr[i] = arr[i] - arr[j];
+                }
+            }
+        }
+        return arr;
     }
 
     // Counting Approach: Merge Sort
