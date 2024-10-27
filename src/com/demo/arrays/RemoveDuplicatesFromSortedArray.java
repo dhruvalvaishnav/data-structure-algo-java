@@ -50,6 +50,7 @@ public class RemoveDuplicatesFromSortedArray {
         System.out.println(removeDuplicates(new int[]{1, 1, 2}));
     }
 
+    // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
     public static int removeDuplicates(int[] nums) {
         // using two pointers
         int left = 1;
