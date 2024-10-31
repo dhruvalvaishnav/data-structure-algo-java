@@ -5,10 +5,14 @@ import java.util.*;
 public class Paypay2 {
     public static void main(String[] args) {
 
-        //String[] dateList = new String[]{"2023-01-01", "2022-01-15", "2023-02-20", "2023-01-01", "2023-02-28"};
-        String[] dateList = new String[]{"2023-01-01", "2022-01-15", "2023-02-20", "2023-01-01", "2023-02-28", "2023-02-25"};
+        String[] dateList1 = {"2023-01-01", "2022-01-15", "2023-02-20", "2023-01-01", "2023-02-28"};
+        System.out.println(solution(dateList1)); // Output: "01"
 
-        String res = solution(dateList);
+        String[] dateList2 = {"2025-05-10"};
+        System.out.println(solution(dateList2)); // Output: "05"
+
+        String[] dateList3 = {"2023-01-05", "2023-01-10", "2023-02-10", "2023-05-25", "2023-05-30"};
+        System.out.println(solution(dateList3)); // Output: "05"
 
     }
 
