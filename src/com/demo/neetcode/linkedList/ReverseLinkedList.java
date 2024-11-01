@@ -27,13 +27,13 @@ public class ReverseLinkedList {
         head.next.next.next = new ListNode(8);
         head.next.next.next.next = new ListNode(10);
 
+        System.out.print("Nodes of the original LinkedList are : ");
+        ListNode.printLinkedList(head);
+
         ListNode result = reverseListIteratively(head);
 //        ListNode result = SolutionReverseLL.reverseListRecursively(head);
-        System.out.println("Nodes of the reversed LinkedList are: ");
-        while (result != null) {
-            System.out.print(result.val + " ");
-            result = result.next;
-        }
+        System.out.print("Nodes of the reversed LinkedList are : ");
+        ListNode.printLinkedList(result);
     }
 
     //iteratively - T O(n) & M O(1)
@@ -42,16 +42,17 @@ public class ReverseLinkedList {
             return head;
         }
 
-        ListNode prev = null;
-        ListNode curr = head;
+        ListNode previous = null;
+        ListNode current = head;
 
-        while (curr != null) {
-            ListNode nxt = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = nxt;
+        while (current != null) {
+            ListNode nextNode = current.next;
+            current.next = previous;
+            previous = current;
+            current = nextNode;
         }
-        return prev;
+
+        return previous;
     }
 
 
@@ -97,6 +98,15 @@ class ListNode {
     ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+
+    public static void printLinkedList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " <=> ");
+            current = current.next;
+        }
+        System.out.println(); // For a newline at the end
     }
 }
 
