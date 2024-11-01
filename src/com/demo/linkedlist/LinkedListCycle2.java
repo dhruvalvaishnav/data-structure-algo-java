@@ -125,7 +125,8 @@ public class LinkedListCycle2 {
             fast = fast.next;
         }
         return slow;
-
+        //Time Complexity: O(n), where n is the number of nodes in the linked list. The algorithm traverses the list at most twice.
+        //Space Complexity: O(1), since it uses a constant amount of space (only two pointers).
     }
 
 
