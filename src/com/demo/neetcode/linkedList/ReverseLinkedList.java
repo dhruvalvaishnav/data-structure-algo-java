@@ -27,7 +27,7 @@ public class ReverseLinkedList {
         head.next.next.next = new ListNode(8);
         head.next.next.next.next = new ListNode(10);
 
-        ListNode result = SolutionReverseLL.reverseListIteratively(head);
+        ListNode result = reverseListIteratively(head);
 //        ListNode result = SolutionReverseLL.reverseListRecursively(head);
         System.out.println("Nodes of the reversed LinkedList are: ");
         while (result != null) {
@@ -35,37 +35,7 @@ public class ReverseLinkedList {
             result = result.next;
         }
     }
-}
 
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-class SolutionReverseLL {
     //iteratively - T O(n) & M O(1)
     public static ListNode reverseListIteratively(ListNode head) {
         if (head == null) {
@@ -101,3 +71,34 @@ class SolutionReverseLL {
     }
 
 }
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+
+
