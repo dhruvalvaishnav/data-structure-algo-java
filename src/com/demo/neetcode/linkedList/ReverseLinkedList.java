@@ -42,9 +42,12 @@ public class ReverseLinkedList {
             return head;
         }
 
+        //initialize two nodes, one is prev and curr is head
         ListNode previous = null;
         ListNode current = head;
-
+        // loop until curr is not null,
+        // make nextNode as curr.next, curr.next as prev
+        // and swap pre to curr, curr to nextNode
         while (current != null) {
             ListNode nextNode = current.next;
             current.next = previous;
