@@ -64,7 +64,7 @@ public class ValidateBST {
             return true;
         }
         // Check if the current node's value is within the valid range
-        if (!(node.val < right && node.val > left)) {
+        if (node.val <= left || node.val >= right) {
             return false;
         }
         // For the left child, the right bound is the current node's value.
