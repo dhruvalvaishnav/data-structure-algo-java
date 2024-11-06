@@ -22,8 +22,8 @@ public class MergeTwoSortedArray {
         System.out.println(Arrays.toString(arr2));
 
         System.out.println("===========================================================================");
-        int[] nums1 = new int[]{1, 2, 3, 0, 0, 0};
-        int[] nums2 = new int[]{2, 5, 6};
+        int[] nums1 = new int[]{1, 2, 3, 0, 0, 0, 0};
+        int[] nums2 = new int[]{2, 5, 6, 8};
 
         // two integers m and n, representing the number of elements in nums1 and nums2 respectively.
         int m = (int) Arrays.stream(nums1).filter(x -> x != 0).count();
@@ -32,26 +32,31 @@ public class MergeTwoSortedArray {
     }
 
     //Merge Sorted Array : https://leetcode.com/problems/merge-sorted-array/
-    private static void merge(int[] nums1, int m, int[] nums2, int n) {
-        if (n == 0) return;  // If nums2 is empty, no need to do anything
-        if (m == 0) { // If nums1 is empty, copy nums2 into nums1
-            System.arraycopy(nums2, 0, nums1, 0, n);
+    private static void merge(int[] arr1, int m, int[] arr2, int n) {
+        if (n == 0) return;  // If arr2 is empty, no need to do anything
+        if (m == 0) { // If arr1 is empty, copy arr2 into arr1
+            System.arraycopy(arr2, 0, arr1, 0, n);
             return;
         }
 
-        // Pointers for nums1, nums2 and the last index of merged array
-        int i = m - 1; // Last element of nums1
-        int j = n - 1; // Last element of nums2
+        // Pointers for arr1, arr2 and the last index of merged array
+        int i = m - 1; // Last element of arr1
+        int j = n - 1; // Last element of arr2
         int k = m + n - 1; // Last index of merged array
 
-        // Merge in reverse order
+        // Merge in reverse order, so that we don't need extra space
         while (i >= 0 && j >= 0) {
-            nums1[k--] = (nums1[i] > nums2[j]) ? nums1[i--] : nums2[j--];
+            // Copy the greater element to the end of arr1
+            arr1[k--] = (arr1[i] > arr2[j]) ? arr1[i--] : arr2[j--];
         }
-        // If there are remaining elements in nums2, copy them
+        // If there are remaining elements in arr2, copy them
         if (j >= 0) {
-            System.arraycopy(nums2, 0, nums1, 0, j + 1);
+            System.arraycopy(arr2, 0, arr1, 0, j + 1);
         }
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
+        // time complexity: O(n+m)
+        // space complexity: O(1)
     }
 
     private static void merge(int n, int m) {

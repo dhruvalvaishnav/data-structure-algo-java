@@ -3,7 +3,6 @@ package com.demo.arrays;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
-import java.util.concurrent.PriorityBlockingQueue;
 
 public class FindKthMaxMin {
 
@@ -49,6 +48,8 @@ public class FindKthMaxMin {
             }
         }
         return pq.peek(); // peek() method retrieves the head of the queue
+        // time complexity of this solution is O(nlogk)
+        // space complexity of this solution is O(k)
     }
 
     private static int kthSmallestElement(Integer[] arr, int k) {
