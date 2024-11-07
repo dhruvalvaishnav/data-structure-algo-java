@@ -8,19 +8,33 @@ public class PS1 {
         System.out.println("2nd smallest element : " + secondSmallest(arr));
         System.out.println("3rd smallest element : " + thirdSmallest(arr));
         System.out.println("2rd largest element : " + secondLargest(arr));
+        System.out.println("2rd largest element : " + secondLargest(new int[]{1, 2, 3, 4, 5}));
+        System.out.println("2rd largest element : " + secondLargest(new int[]{5, 5, 5, 5, 5}));
+        System.out.println("2rd largest element : " + secondLargest(new int[]{10, 10}));
+        System.out.println("2rd largest element : " + secondLargest(new int[]{7, 2, 3, 4, 8}));
     }
 
     private static int secondLargest(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            throw new IllegalArgumentException("Array must contain at least two elements.");
+        }
         int largest = Integer.MIN_VALUE;
         int secondLargest = Integer.MIN_VALUE;
+        boolean foundSecondLargest = false;
+
         for (int num : arr) {
             if (num > largest) {
                 secondLargest = largest;
                 largest = num;
-            }
-            if (num < largest && num > secondLargest) {
+                foundSecondLargest = true;
+            } else if (num < largest && num > secondLargest) {
                 secondLargest = num;
+                foundSecondLargest = true;
             }
+        }
+        // If secondLargest was not updated, that means all elements were the same.
+        if (!foundSecondLargest) {
+            throw new IllegalArgumentException("Array must contain at least two distinct elements.");
         }
         return secondLargest;
     }
