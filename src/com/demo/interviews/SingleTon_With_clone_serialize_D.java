@@ -55,6 +55,7 @@ public class SingleTon_With_clone_serialize_D {
 
 class SingleTon implements Serializable, Cloneable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private static volatile SingleTon instance;

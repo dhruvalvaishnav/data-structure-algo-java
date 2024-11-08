@@ -10,7 +10,9 @@ public class PracticeNew {
         //Find the first non-repeating character in a string.
         String str = "aabbccc";
 
-        String s = str.chars().mapToObj(x -> Character.valueOf((char) x)).collect(Collectors.groupingBy(x -> Character.valueOf((char) x), LinkedHashMap::new, Collectors.counting())).entrySet().stream().filter(x -> x.getValue() == 1L).map(x -> x.getKey()).findFirst().map(String::valueOf).orElse("$");
+        String s = str.chars().mapToObj(x -> Character.valueOf((char) x))
+                .collect(Collectors.groupingBy(x -> Character.valueOf((char) x), LinkedHashMap::new, Collectors.counting()))
+                .entrySet().stream().filter(x -> x.getValue() == 1L).map(x -> x.getKey()).findFirst().map(String::valueOf).orElse("$");
 
         System.out.println(s);
 
