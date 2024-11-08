@@ -64,10 +64,10 @@ public class Walmart1 {
         matrix[i][j] = 0;
 
         // Explore in all four directions (down, up, right, left)
-        dfs(matrix, i + 1, j); // Move down
-        dfs(matrix, i - 1, j); // Move up
         dfs(matrix, i, j + 1); // Move right
+        dfs(matrix, i + 1, j); // Move down
         dfs(matrix, i, j - 1); // Move left
+        dfs(matrix, i - 1, j); // Move up
     }
 
 }
