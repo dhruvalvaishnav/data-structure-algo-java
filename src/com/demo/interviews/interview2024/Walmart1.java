@@ -61,6 +61,7 @@ public class Walmart1 {
         }
 
         // Mark the current land cell as visited by setting it to water (0)
+        // breaking condition, or we can say by which checking will be stop in dfs
         matrix[i][j] = 0;
 
         // Explore in all four directions (down, up, right, left)
