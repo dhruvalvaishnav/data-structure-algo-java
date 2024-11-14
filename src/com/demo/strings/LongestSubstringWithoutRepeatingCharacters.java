@@ -5,10 +5,10 @@ import java.util.Set;
 
 public class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
-        String s = "abcabcbb";
-        //abc - 3
-        //System.out.println(lengthOfLongestSubstringBruteForce(s));
-        System.out.println(lengthOfLongestSubstringHashSet(s));
+        //System.out.println(lengthOfLongestSubstringBruteForce("abcabcbb")); // 3 - abc
+        System.out.println(lengthOfLongestSubstringHashSet("abcabcbb")); // 3 - abc
+        System.out.println(lengthOfLongestSubstringHashSet("bbbbb")); // 1 - b
+        System.out.println(lengthOfLongestSubstringHashSet("pwwkew")); // 3 - wke
     }
 
     private static int lengthOfLongestSubstringHashSet(String input) {
@@ -19,7 +19,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
         for (int right = 0; right < input.length(); right++) {
             // If the character is in the set, move the left pointer to the right of the previous occurrence
             while (set.contains(input.charAt(right))) {
-                set.remove(input.charAt(right));
+                set.remove(input.charAt(left));
                 left++;
             }
             // Add the current character to the set
