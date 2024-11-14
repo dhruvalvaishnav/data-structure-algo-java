@@ -1,13 +1,38 @@
-package com.demo.leetcode;
+package com.demo.strings;
 
-public class LongestSubstring {
+import java.util.HashSet;
+import java.util.Set;
+
+public class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
         String s = "abcabcbb";
         //abc - 3
-        System.out.println(lengthOfLongestSubstring(s));
+        //System.out.println(lengthOfLongestSubstringBruteForce(s));
+        System.out.println(lengthOfLongestSubstringHashSet(s));
     }
 
-    public static int lengthOfLongestSubstring(String str) {
+    private static int lengthOfLongestSubstringHashSet(String input) {
+        // Set to store the characters in the current window
+        Set<Character> set = new HashSet<>();
+        int left = 0, maxLength = 0;
+
+        for (int right = 0; right < input.length(); right++) {
+            // If the character is in the set, move the left pointer to the right of the previous occurrence
+            while (set.contains(input.charAt(right))) {
+                set.remove(input.charAt(right));
+                left++;
+            }
+            // Add the current character to the set
+            set.add(input.charAt(right));
+            // Update the maximum length of substring without repeating characters
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+
+    }
+
+    public static int lengthOfLongestSubstringBruteForce(String str) {
         int result = 0;
         for (int i = 0; i < str.length(); i++) {
             // there are 256 ASCII characters. This includes standard ASCII characters(0-127)
@@ -23,6 +48,8 @@ public class LongestSubstring {
         }
         return result;
     }
+
+
 }
 
 /*
