@@ -42,19 +42,28 @@ public class BestTimeToBuySellStock {
     }
 
     private static int calculateMaxProfitForOneStock(int[] prices) {
-        // left - buy and right - sell, maxProfit
-        int left = 0, right = 1, maxProfit = 0;
+        // Edge case: If the array is empty or contains only one price, no profit can be made
+        if (prices == null || prices.length <= 1) {
+            return 0;
+        }
+        int buyIndex = 0; // Pointer for the "buy" day
+        int sellIndex = 1; // Pointer for the "sell" day
+        int maxProfit = 0; // Variable to keep track of the maximum profit
 
-        while (right < prices.length) {
-            // profitable ??
-            if (prices[left] < prices[right]) {
-                // calculate profit
-                final int profit = prices[right] - prices[left];
+        while (sellIndex < prices.length) {
+            // If a profitable situation is found (sell price is greater than buy price)
+            if (prices[buyIndex] < prices[sellIndex]) {
+                // Calculate potential profit
+                int profit = prices[sellIndex] - prices[buyIndex];
+                // Update maxProfit if the current profit is higher than the previous maxProfit
                 maxProfit = Math.max(maxProfit, profit);
             } else {
-                left = right;
+                // If the price at sellIndex is lower, update buyIndex to the current sellIndex
+                // This means we are considering a new "buy" day as the previous one was not profitable
+                buyIndex = sellIndex;
             }
-            right++;
+            // Move the sellIndex forward to consider the next day for selling
+            sellIndex++;
         }
         return maxProfit;
     }

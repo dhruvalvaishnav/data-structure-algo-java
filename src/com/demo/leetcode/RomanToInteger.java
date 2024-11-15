@@ -55,14 +55,24 @@ public class RomanToInteger {
         put('M', 1000);
     }};
 
-    private static int romanToInt(String str) {
+    private static int romanToInt(String s) {
         int sum = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (i != str.length() - 1 && roman.get(str.charAt(i)) < roman.get(str.charAt(i + 1))) {
-                sum += roman.get(str.charAt(i + 1)) - roman.get(str.charAt(i));
-                i++;
+        for (int i = 0; i < s.length(); i++) {
+            // Get the current Roman numeral
+            char current = s.charAt(i);
+            // If we're not at the last character, check the next character
+            if (i < s.length() - 1) {
+                char next = s.charAt(i + 1);
+                // If current is less than next, subtract current from next
+                if (roman.get(current) < roman.get(next)) {
+                    sum += roman.get(next) - roman.get(current);
+                    i++; // Skip the next character since we already processed it
+                } else {
+                    sum += roman.get(current);
+                }
             } else {
-                sum += roman.get(str.charAt(i));
+                // For the last character, just add it
+                sum += roman.get(current);
             }
         }
         return sum;
