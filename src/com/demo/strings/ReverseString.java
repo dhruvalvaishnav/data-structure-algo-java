@@ -3,10 +3,10 @@ package com.demo.strings;
 public class ReverseString {
     public static void main(String[] args) {
         String str = "Dhruval";
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {
             char c = str.charAt(i);
-            result += c;
+            result.append(c);
         }
         System.out.println(result);
 
