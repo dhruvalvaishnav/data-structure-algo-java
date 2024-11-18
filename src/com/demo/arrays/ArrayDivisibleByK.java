@@ -19,16 +19,33 @@ public class ArrayDivisibleByK {
     }
 
     public static long countHowManyPairsDivByK(int[] arr, int k) {
+        // Initialize count to 0 to keep track of valid pairs
         long count = 0L;
+
+        // Create a frequency array to track how many numbers have each remainder
+        // when divided by k. The array size is k, corresponding to remainders from 0 to k-1.
         int[] frequency = new int[k];
+
+        // Iterate through each number in the array
         for (int num : arr) {
+            // Compute the remainder of the current number when divided by k
             int remainder = num % k;
-            int complement = k - remainder;
+
+            // The complement remainder that would make the sum divisible by k
+            int complement = (k - remainder) % k;
+
+            // If remainder is 0, we need to pair it with another number with remainder 0
+            // If remainder is not 0, we need to find how many numbers with complement remainder have appeared before
             count += remainder == 0 ? frequency[0] : frequency[complement];
+
+            // After considering the current number, increment the frequency of its remainder
             frequency[remainder]++;
         }
+
+        // Return the total number of valid pairs
         return count;
     }
+
 
     public static List<String> getPairsDivByK(int[] arr, int k) {
         List<String> pairs = new ArrayList<>();

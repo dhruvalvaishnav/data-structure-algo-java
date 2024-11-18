@@ -24,7 +24,9 @@ public class EquilibriumIndexOfArray {
 
     /*
      What is equilibrium index?
-     The equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to the sum of elements at higher indexes.
+     The equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to
+     the sum of elements at higher indexes.
+
      For example, in an array A: {-7, 1, 5, 2, -4, 3, 0};
      A[0] = -7,A[1] = 1,A[2] = 5,A[3] = 2,A[4] = -4,A[5] = 3,A[6] = 0
      3 is an equilibrium index, because:
