@@ -1,5 +1,7 @@
 package com.demo.interviews.interview2024;
 
+import com.demo.java8.models.Employee;
+
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -10,6 +12,24 @@ import java.util.stream.Stream;
  */
 public class Practice1 {
     public static void main(String[] args) {
+
+        int k = 2;
+        int[] nums = {3, 2, 1, 5, 6, 4};
+        List<Employee> list = Arrays.asList(
+                new Employee(5, 6000, 25, "Vedant", "HR", "M", null),
+                new Employee(1, 3000, 25, "Bilal", "IT", "M", null),
+                new Employee(3, 4000, 25, "Brijesh", "Sales", "M", null),
+                new Employee(4, 5000, 25, "Dhruv", "HR", "M", null),
+                new Employee(2, 3000, 25, "Mukesh", "IT", "M", null),
+                new Employee(6, 4000, 25, "Ankit", "HR", "M", null));
+        //findKthLargest(nums, k);
+
+        // if Salary same then based on the name filter java 8
+        List<Employee> collected = list.stream()
+                        .sorted(Comparator.comparingDouble(Employee::getSalary)
+                        .thenComparing(Employee::getName)).collect(Collectors.toList());
+        System.out.println(collected);
+
 
         //freqOfCharsInString();
         //separateOddEven();
@@ -25,6 +45,18 @@ public class Practice1 {
 
     }
 
+    public static int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for (int n : nums) {
+            pq.add(n);
+            // keep size of priority queue to k because we need kth largest element
+            if (pq.size() > k) {
+                pq.poll(); // remove smallest element
+            }
+        }
+        System.out.println(pq);
+        return pq != null ? pq.peek() : -1;
+    }
 
     private static void freqOfCharsInString() {
         // find frequency of characters in String
@@ -76,5 +108,17 @@ public class Practice1 {
 //        return collect1.equalsIgnoreCase(collect2);
     }
 
+
+    /*
+    // WAP to segregate employees based on their department and sort them as per their salary
+        employees.stream()
+                .collect(Collectors.groupingBy(employee -> employee.departmentName))
+                .forEach((department, employeeList) -> {
+                    System.out.println("Department: " + department);
+                    employeeList.stream()
+                            .sorted(Comparator.comparingInt(employee -> employee.salary))
+                            .forEach(employee -> System.out.println(employee.name + " " + employee.salary));
+                });
+     */
 
 }
