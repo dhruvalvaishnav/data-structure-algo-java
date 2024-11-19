@@ -33,6 +33,9 @@ public class IsomorphicStrings {
     public static void main(String[] args) {
         System.out.println(isIsomorphic("egg", "add"));
         System.out.println(isIsomorphic("foo", "bar"));
+        System.out.println(isIsomorphic("ab", "aa"));
+        System.out.println(isIsomorphicWithOneMap("egg", "add"));
+        System.out.println(isIsomorphicWithOneMap("paper", "title"));
     }
 
     public static boolean isIsomorphic(String s, String t) {
@@ -58,5 +61,29 @@ public class IsomorphicStrings {
             mapTS.put(c2, c1);
         }
         return true;
+        // Time complexity : O(n)
+        // Space complexity : O(n)
+    }
+
+    public static boolean isIsomorphicWithOneMap(String s, String t) {
+        System.out.print("The given string s : '" + s + "' and t : '" + t + "' isIsomorphic of each other ? : ");
+        if (s.length() != t.length()) return false;
+
+        Map<Character, Character> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c1 = s.charAt(i);
+            char c2 = t.charAt(i);
+
+            if (map.containsKey(c1)) {
+                if (map.get(c1) != c2) return false;
+            } else {
+                // If c2 is already mapped to some other char, it's not isomorphic
+                if (map.containsValue(c2)) return false;
+                map.put(c1, c2);
+            }
+        }
+        return true;
+        // Time complexity : O(n)
+        // Space complexity : O(n)
     }
 }

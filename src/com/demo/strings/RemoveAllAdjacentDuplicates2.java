@@ -61,7 +61,7 @@ public class RemoveAllAdjacentDuplicates2 {
             result.append(String.valueOf((char) pair[0]).repeat(Math.max(0, pair[1])));
         }
 
-        if (result.isEmpty()) return "";
+        if (result.length() == 0) return "";
         return result.toString();
     }
 }
