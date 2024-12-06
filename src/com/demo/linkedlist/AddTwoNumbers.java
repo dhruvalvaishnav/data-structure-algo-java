@@ -1,16 +1,6 @@
-package com.demo.neetcode.arrayAndHashing;
+package com.demo.linkedlist;
 
-import java.util.*;
-
-/* Q.1 :
-    Given an array of integers numbers and an integer target,return indices of the two numbers such that they add up to target.
-    You may assume that each input would have exactly one solution,and you may not use the same element twice.
-    You can return the answer in any order.
-    Example 1:
-    Input:numbers=[2,7,11,15],target=9
-    Output:[0,1]
-
-    Q.2 : addTwoNumbers with LinkedList :
+/* Q. : addTwoNumbers with LinkedList :
     You are given two non-empty linked lists representing two non-negative integers.
     The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
     You may assume the two numbers do not contain any leading zero, except the number 0 itself.
@@ -39,11 +29,9 @@ import java.util.*;
     Return dummy head's next node.
     */
 
-public class TwoSum2 {
+public class AddTwoNumbers {
 
     public static void main(String[] args) {
-        int[] values = {3, 2, 4};
-        System.out.println("Output is at index : " + Arrays.toString(twoSum(values, 6)));
 
         ListNode l1 = new ListNode();
         l1.push(2);
@@ -58,19 +46,6 @@ public class TwoSum2 {
         ListNode listNode = addTwoNumbers(l1, l2);
         System.out.println("Output is : " + listNode);
 
-    }
-
-    // brute force
-    public static int[] twoSum(int[] numbers, int target) {
-        for (int i = 0; i < numbers.length; i++) {
-            for (int j = i + 1; j < numbers.length; j++) {
-                if (numbers[j] == target - numbers[i]) {
-                    return new int[]{i, j};
-                }
-            }
-        }
-        // In case there is no solution, we'll just return null
-        return null;
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {

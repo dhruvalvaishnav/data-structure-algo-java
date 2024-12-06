@@ -34,8 +34,29 @@ public class TwoSum {
         int[] arr = {2, 7, 11, 15};
         int target = 13;
 
-        System.out.println(Arrays.toString(findTwoSum(arr, target)));
-        System.out.println(Arrays.toString(findTwoSumUsingHashMap(arr, target)));
+        // System.out.println(Arrays.toString(findTwoSum(arr, target)));
+        // System.out.println(Arrays.toString(findTwoSumUsingHashMap(arr, target)));
+        System.out.println(Arrays.toString(findTwoSumOptimized(arr, target)));
+    }
+
+    // Time Complexity: O(N) and Space Complexity: O(1)
+    private static int[] findTwoSumOptimized(int[] arr, int target) {
+        int[] result = new int[2];
+        //Arrays.sort(arr);  // Sorting the array to use the two-pointer technique if array is not sorted
+        int i = 0, j = arr.length - 1;
+        while (i < j) {
+            int sum = arr[i] + arr[j];
+            if (sum == target) {
+                result[0] = i;  // Store the indices where the solution is found
+                result[1] = j;
+                return result;
+            } else if (sum < target) {
+                i++;  // Move the left pointer to the right to increase the sum
+            } else {
+                j--;  // Move the right pointer to the left to decrease the sum
+            }
+        }
+        return new int[0];
     }
 
     private static int[] findTwoSum(int[] arr, int target) {
@@ -47,6 +68,8 @@ public class TwoSum {
             }
         }
         return new int[0];
+        // time complexity: O(n^2)
+        // space complexity: O(1)
     }
 
     //	  Time Complexity: O(N) and Space Complexity: O(N)
