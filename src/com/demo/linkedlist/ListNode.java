@@ -38,6 +38,7 @@ class ListNode {
             visited.add(current); // Mark this node as visited
             current = current.next;
         }
+        System.out.println();
     }
 
 }
