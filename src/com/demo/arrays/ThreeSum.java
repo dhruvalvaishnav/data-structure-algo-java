@@ -42,6 +42,7 @@ public class ThreeSum {
         System.out.println("Three Sum : " + threeSum(new int[]{0, 0, 0})); // [[0,0,0]]
     }
 
+    // time complexity O(n^2) and space complexity O(1)
     public static List<List<Integer>> threeSum(int[] nums) {
         // Create a list to store the result
         List<List<Integer>> result = new ArrayList<List<Integer>>();
