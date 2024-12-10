@@ -20,7 +20,7 @@ public class PracticeNew {
         int[] arr = new int[]{1, 2, 3, 4, 5, 6, 7};
         System.out.println(Arrays.toString(arr));
         int k = 3;
-        k = k % arr.length;
+        k = k % arr.length; // to handle the case when k > arr.length
         rotate(arr, 0, arr.length - 1);
         rotate(arr, 0, k - 1);
         rotate(arr, k, arr.length - 1);
