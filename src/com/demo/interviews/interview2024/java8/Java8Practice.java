@@ -116,6 +116,19 @@ public class Java8Practice {
         System.out.println("Sum of the squares of the top 5 odd numbers: " + sum);
         System.out.println("=========================================================================================");
 
+
+        // Convert one list to multiple list having duplicate and unique values
+        List<String> strings = List.of("AJAY","VIJAY","SEEMA","AJAY");
+        // index of first occurrence and last occurrence is different for duplicate values and same for unique values
+        // Duplicate = AJAY
+        strings.stream().filter(s -> strings.indexOf(s) != strings.lastIndexOf(s)).distinct().forEach(System.out::println);
+        // Unique= VIJAY,SEEMA
+        strings.stream().filter(s -> strings.indexOf(s) == strings.lastIndexOf(s)).distinct().forEach(System.out::println);
+
+        // or create a map
+        strings.stream().collect(Collectors.groupingBy(s -> strings.indexOf(s) != strings.lastIndexOf(s) ? "Duplicate" : "Unique")).forEach((k, v) -> System.out.println(k + " = " + v));
+
+
     }
 
 
